@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "python3 search.py",
-    "start-express": "node index.js",
-    "start-flask": "python search.py"
+    "start-python": "python search.py"
+    
   },
   "keywords": [],
   "author": "",
