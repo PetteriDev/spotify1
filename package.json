@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-python": "python search.py"
+    "start": "python search.py"
     
   },
   "keywords": [],
