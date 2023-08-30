@@ -1,1 +1,1 @@
-web: python search.py
+web: gunicorn search:app
