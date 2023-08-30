@@ -10,9 +10,14 @@ load_dotenv()
 client_id = os.getenv("CLIENT_ID")
 client_secret = os.getenv("CLIENT_SECRET")
 
-client = MongoClient(config.database)
+# Connect to the MongoDB database
+client = MongoClient(config_data['database'])
 db = client['spotify']
 collection = db['search_input']
+
+print('main')
+
+
 
 def get_token():
     auth_string = client_id + ":" + client_secret

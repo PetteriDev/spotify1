@@ -23,7 +23,7 @@ const Artist = mongoose.model('Artist', artistSchema);
 // Connect to your MongoDB database
 mongoose.connect(config.database, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    console.log('Connected to MongoDB');
+    console.log('Backend connected to MongoDB');
     
     // Start the server
     app.listen(port, () => {
