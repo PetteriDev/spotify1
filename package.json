@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "gunicorn search:app",
-    "start-worker": "node index.js"
+    "start": "node index.js",
+    "start-worker": "gunicorn search:app"
     
   },
   "keywords": [],
