@@ -5,7 +5,7 @@ const { exec } = require('child_process');
 // Connect to your MongoDB database
 mongoose.connect(config.database, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    console.log('Connected to MongoDB');
+    console.log('Gunicorn connected to MongoDB');
     
     // Define the artist schema and model
     const artistSchema = new mongoose.Schema({
