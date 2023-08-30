@@ -2,12 +2,18 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from pymongo import MongoClient
 import subprocess
+import json
 
 app = Flask(__name__)
 CORS(app)
 
+
+# Load the config from config.json
+with open('config/config.json') as config_file:
+    config_data = json.load(config_file)
+
 # Connect to the MongoDB database
-client = MongoClient(config.database)
+client = MongoClient(config_data['database'])
 db = client['spotify']
 collection = db['search_input']
 
