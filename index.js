@@ -4,6 +4,7 @@ const openurl = require('openurl');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./config/database');
+const { exec } = require('child_process');
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -19,6 +20,14 @@ const artistSchema = new mongoose.Schema({
 });
 
 const Artist = mongoose.model('Artist', artistSchema);
+
+exec('python search.py', (error, stdout, stderr) => {
+  if (error) {
+    console.error('Failed to execute search.py:', error);
+    mongoose.connection.close();
+    console.log('MongoDB connection closed');
+    return;
+  }})
 
 // Connect to your MongoDB database
 mongoose.connect(config.database, { useNewUrlParser: true, useUnifiedTopology: true })
